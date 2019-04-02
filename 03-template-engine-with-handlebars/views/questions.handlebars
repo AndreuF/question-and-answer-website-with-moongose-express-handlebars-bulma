@@ -1,0 +1,38 @@
+{{> header}}
+
+<h1>List of questions</h1>
+
+{{#if currentUser }}
+  <form action="/questions" method="post">
+    <textarea placeholder="Enter your question" rows="5" name="question"></textarea>
+    <button value="SendQuestion">Submit</button>
+  </form>
+
+{{else }}
+  Please, log in to write questions.
+{{/if }}
+
+
+
+{{#each questions}}
+
+
+  <p> <a href="/users/{{ this.author.username }}">
+
+            {{#if this.author.displayName }}
+              {{ this.author.displayName }}
+            {{else }}
+              {{ this.author.username }}
+            {{/if }}
+
+          </a>
+    <br>
+    <a href="/questions/{{ this._id }}">
+          {{ this.data }}
+        </a>
+  </p>
+
+
+{{/each}}
+
+{{> footer}}

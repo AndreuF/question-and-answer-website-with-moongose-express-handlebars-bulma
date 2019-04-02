@@ -1,0 +1,26 @@
+{
+  "name": "01-accessing-the-database-with-mongoose",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node tests/responsemodel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreuF/question-and-answer-website-with-moongose-express-handlebars-bulma.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreuF/question-and-answer-website-with-moongose-express-handlebars-bulma/issues"
+  },
+  "homepage": "https://github.com/AndreuF/question-and-answer-website-with-moongose-express-handlebars-bulma#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "mongoose": "^5.4.20"
+  }
+}

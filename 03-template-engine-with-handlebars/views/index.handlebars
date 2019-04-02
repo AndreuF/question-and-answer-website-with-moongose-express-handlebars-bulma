@@ -1,0 +1,26 @@
+{{> header}}
+
+<h1>Join the big community!!</h1>
+
+{{#each users}}
+
+
+  <p>
+    <a href="/users/{{ this.username }}">
+              {{#if this.displayName }}
+                {{ this.displayName }}
+              {{else }}
+                {{ this.username }}
+              {{/if }}
+              </a>
+    {{#if this.bio }}
+      <br>
+      {{this.bio}}
+    {{/if}}
+
+  </p>
+
+
+{{/each}}
+
+{{> footer}}

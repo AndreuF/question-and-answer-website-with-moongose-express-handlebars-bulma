@@ -1,0 +1,20 @@
+{{> header}}
+
+<h1>Welcome to Learn About Me!</h1>
+
+{{#each questions}}
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <a href="/questions/{{ this.data }}">
+        {{ this.data }}
+      </a>
+    </div>
+    {{#if this.responses[0] }}
+      <div class="panel-body"> {{ this.response[0].data }} </div>
+    {{/if}}
+  </div>
+
+{{/each}}
+
+{{> footer}}

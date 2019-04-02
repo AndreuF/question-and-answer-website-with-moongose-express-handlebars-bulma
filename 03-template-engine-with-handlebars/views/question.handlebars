@@ -1,0 +1,37 @@
+{{> header}}
+
+<div class="box">
+  <h1 class="title is-4">{{ question.data }}</h1>
+</div>
+
+{{#if currentUser }}
+  <form action="" method="post">
+    <textarea placeholder="Enter your response" rows="5" name="response"></textarea>
+    <button value="SendResponse">Submit</button>
+  </form>
+
+{{else }}
+
+  Please, log in to comment.
+
+{{/if }}
+
+{{#each responses}}
+
+  <p>
+    <a href="/users/{{ this.author.username }}">
+
+                {{#if this.author.displayName }}
+                  {{ this.author.displayName }}
+                {{else }}
+                  {{ this.author.username }}
+                {{/if }}
+
+              </a>
+    <br>
+    {{ this.data }}
+  </p>
+
+{{/each}}
+
+{{> footer}}

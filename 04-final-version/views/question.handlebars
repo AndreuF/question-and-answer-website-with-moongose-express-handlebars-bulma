@@ -1,0 +1,83 @@
+{{> header}}
+
+<div class="box">
+  <h1 class="title is-4">{{ question.data }}</h1>
+</div>
+
+
+
+  {{#if currentUser }}
+   <div class="box">
+    <form action="" method="post">
+      <div class="field">
+        <label class="label">Give your answer</label>
+        <div class="control">
+          <textarea class="textarea" placeholder="Enter your response" rows="5" name="response"></textarea>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <button class="button is-link" value="SendResponse">Submit</button>
+        </div>
+      </div>
+    </form>
+   </div>
+
+  {{else }}
+    <article class="message is-info">
+      <div class="message-body">
+        Please, log in to comment.
+      </div>
+    </article>
+  {{/if }}
+
+
+
+
+  {{#each responses}}
+
+    <div class="box">
+      <article class="media">
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <img src="https://bulma.io/images/placeholders/64x64.png">
+        </p>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>
+              <a href="/users/{{ this.author.username }}">
+
+                {{#if this.author.displayName }}
+                  {{ this.author.displayName }}
+                {{else }}
+                  {{ this.author.username }}
+                {{/if }}
+
+              </a>
+            </strong>
+              <br>
+              {{ this.data }}
+            </p>
+          </div>
+          <nav class="level is-mobile">
+            <div class="level-left">
+              <a class="level-item">
+              <span class="icon is-small"><i class="fas fa-reply"></i></span>
+            </a>
+              <a class="level-item">
+              <span class="icon is-small"><i class="fas fa-retweet"></i></span>
+            </a>
+              <a class="level-item">
+              <span class="icon is-small"><i class="fas fa-heart"></i></span>
+            </a>
+            </div>
+          </nav>
+        </div>
+      </article>
+    </div>
+
+  {{/each}}
+
+{{> footer}}

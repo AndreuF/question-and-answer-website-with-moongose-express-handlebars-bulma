@@ -1,0 +1,18 @@
+
+var mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+//const ObjectId = mongoose.Types.ObjectId;
+var User = require("./user")
+var Response = require("./response")
+
+var questionSchema = mongoose.Schema({
+	data: String,
+	tags: [String],
+	author: { type: Schema.ObjectId, ref: User },
+   createdAt: { type: Date, default: Date.now },
+   //responses: [{ type: Schema.ObjectId, ref: Response }]
+});
+
+var Question = mongoose.model("Question", questionSchema);
+
+module.exports = Question;

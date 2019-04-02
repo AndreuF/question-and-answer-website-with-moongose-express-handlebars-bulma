@@ -1,0 +1,48 @@
+{{> header}}
+
+<div class="box">
+  <h1 class="title is-4">Join the big community!!</h1>
+</div>
+
+{{#each users}}
+
+  <div class="box">
+    <article class="media">
+      <div class="media-left">
+        <figure class="image is-64x64">
+          <img src="https://bulma.io/images/placeholders/64x64.png" alt="Image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong><a href="/users/{{ this.username }}">
+              {{#if this.displayName }}
+                {{ this.displayName }}
+              {{else }}
+                {{ this.username }}
+              {{/if }}
+              </a></strong>
+            {{#if this.bio }}
+              <br>
+              {{this.bio}}
+            {{/if}}
+
+          </p>
+        </div>
+        <nav class="level is-mobile">
+          <div class="level-left">
+            <a class="level-item" aria-label="address-book">
+              <span class="icon is-small">
+                <i class="fas fa-address-book" aria-hidden="true"></i>
+              </span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </article>
+  </div>
+
+{{/each}}
+
+{{> footer}}
